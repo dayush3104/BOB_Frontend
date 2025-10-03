@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Behavioral Biometric Authentication</title>
+<title>Kavach X - Behavioral Biometric Authentication</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -199,6 +199,13 @@ color: #ccd6f6 !important;
 </style>
 </head>
 <body>
+<div class="w-full flex items-center justify-center p-6 space-x-4 z-10">
+    <span class="text-5xl font-bold text-orange-800" style="font-family: 'Poppins', sans-serif;">Kavach X</span>
+</div>
+
+<div class="absolute top-6 left-6 flex items-center space-x-4 z-10">
+    <img src="https://github.com/AshwaniE609/BankOfBaroda/blob/main/logo1.png?raw=true" alt="Bank of Baroda Logo" class="h-12">
+</div>
 <div id="app" class="min-h-screen flex flex-col items-center justify-center p-4 fade-in">
 <div id="loading-spinner" class="spinner"></div>
 <div id="auth-container" class="hidden w-full max-w-md">
@@ -226,7 +233,7 @@ color: #ccd6f6 !important;
 </div>
 <div id="mandatory-calibration-container" class="hidden w-full max-w-4xl fade-in">
 <div class="glass-card rounded-3xl p-8">
-<h2 class="text-4xl font-bold text-center text-orange-600 mb-4">Security Profile Setup</h2>
+<h2 class="text-4xl font-bold text-center text-orange-600 mb-4">Kavach X Security Profile Setup</h2>
 <p class="text-orange-800 text-center mb-8">To secure your account, we need to establish your unique behavioral baseline.</p>
 <div class="w-full bg-orange-100 rounded-full h-3 mb-8">
 <div id="calibration-progress" class="progress-bar h-3 rounded-full"></div>
@@ -1427,10 +1434,10 @@ function speakAndGetEndTime(t) { return new Promise((resolve, reject) => { audio
 
 async function getComprehensiveClientInfo() {
     let ipGeo = {};
-    try {
+        try {
         const res = await fetch('https://ipapi.co/json/');
         if (res.ok) ipGeo = await res.json();
-    } catch (e) { console.warn('IP API fetch failed'); }
+        } catch (e) { console.warn('IP API fetch failed'); }
     
     let geoLoc = null;
     try {
@@ -1716,7 +1723,7 @@ function updateTrustScoreUI(score, confidence = '--') {
         } else {
             trustScoreDisplay.className = 'text-8xl font-bold text-red-500 my-4 transition-colors duration-500';
             if (!isAdvancedAuthInProgress()) {
-                 showAdvancedAuthenticationChoice();
+                showAdvancedAuthenticationChoice();
             }
         }
     }
